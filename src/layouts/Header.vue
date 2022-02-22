@@ -6,10 +6,10 @@
             </v-col>
             <v-col sm="10" md="8" class="d-flex align-center justify-end">
                 <nav class="Header__nav d-flex align-center">
-                    <router-link to="/home">Home</router-link>
-                    <router-link to="/home">Historia</router-link>
-                    <router-link to="/home">Fotos</router-link>
-                    <router-link to="/home">Videos</router-link>
+                    <a @click="$vuetify.goTo('#section-home', options)">Home</a>
+                    <a @click="$vuetify.goTo('#section-about', options)">Historia</a>
+                    <a @click="$vuetify.goTo('#section-photos', options)">Fotos</a>
+                    <a @click="$vuetify.goTo('#section-videos', options)">Videos</a>
                     <v-btn class="btn-exit" v-if="tokenUser" depressed @click="expireSesion">Salir</v-btn>
                 </nav>
             </v-col>
@@ -23,7 +23,17 @@ export default {
     props: ['tokenUser'],
     data () {
         return {
-            statusModal: false
+            statusModal: false,
+            selections: ['#first', '#second', '#third'],
+        }
+    },
+    computed: {
+        options () {
+            return {
+                duration: 300,
+                offset: 0,
+                easing: 'easeInOutCubic',
+            }
         }
     },
     methods: {
@@ -45,6 +55,7 @@ export default {
     background-color: white;
     box-shadow: 0px 4px 6px rgba(0,0,0,.1);
     padding: 0 20px;
+    z-index: 99;
 }
 .Header a{
     display: block;

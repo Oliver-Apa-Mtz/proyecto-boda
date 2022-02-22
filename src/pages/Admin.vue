@@ -5,7 +5,7 @@
                <div class="Home__banner"></div>
             </v-col> 
            <v-col cols="12" sm="12" md="6" lg="5" class="d-flex justify-center align-center">
-               <div class="Home__title">
+               <div class="Home__title Home__title--custom">
                     <h1>Bienvenidos</h1>
                     <h2>Conoce todos los detalles de nuestra boda</h2>
                     <div>
@@ -44,8 +44,8 @@ export default {
             password: '',
             snackbar: false,
             rules: {
-                email: [val => (val || '').length > 0 || 'This field is required'],
-                password: [val => (val || '').length > 0 || 'This field is required']
+                email: [val => (val || '').length > 0 || 'Introduzca un correo electrónico valido'],
+                password: [val => (val || '').length > 0 || 'Introduzca la contraseña correcta']
             },
             dataUser: user
         }
@@ -81,6 +81,12 @@ export default {
 }
 </script>
 <style>
+.Home__title--custom h2{
+    font-size: 2rem !important;
+    font-weight: 300 !important;
+    margin-bottom: 40px !important;
+    line-height: 38px;
+}
 .btn-login, .v-snack__wrapper.theme--dark{
     color: #232323 !important;
     background-color: #FEDDBE !important;
@@ -88,5 +94,9 @@ export default {
 }
 input{
     font-size: 1rem;
+}
+.v-messages__message{
+    font-size: .8rem;
+    margin-bottom: 10px;
 }
 </style>
