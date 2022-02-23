@@ -10,6 +10,7 @@
                     <a @click="$vuetify.goTo('#section-about', options)">Historia</a>
                     <a @click="$vuetify.goTo('#section-photos', options)">Fotos</a>
                     <a @click="$vuetify.goTo('#section-videos', options)">Videos</a>
+                    <a @click="$vuetify.goTo('#section-gracias', options)">Gracias</a>
                     <v-btn class="btn-exit" v-if="tokenUser" depressed @click="expireSesion">Salir</v-btn>
                 </nav>
             </v-col>

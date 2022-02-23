@@ -42,124 +42,88 @@
                 <v-tab-item :value="'tab-1'">
                     <v-row class="section__images d-flex">
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
+                            <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
+                            <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                     </v-row>
                 </v-tab-item>
                 <v-tab-item :value="'tab-2'">
                     <v-row class="section__images d-flex">
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
+                            <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
+                            <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                     </v-row>
                 </v-tab-item>
                 <v-tab-item :value="'tab-3'">
                     <v-row class="section__images d-flex">
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
+                            <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
+                            <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                     </v-row>
                 </v-tab-item>
                 <v-tab-item :value="'tab-4'">
                     <v-row class="section__images d-flex">
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
+                            <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
+                            <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                     </v-row>
                 </v-tab-item>
@@ -181,30 +145,38 @@
                 <v-tab-item :value="'tabVi-1'">
                     <v-row class="section__images d-flex">
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="galleryVideos[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
+                            <silent-box :image="galleryVideos[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="galleryVideos[0]"></silent-box>
                         </v-col>
                     </v-row>
                 </v-tab-item>
                 <v-tab-item :value="'tabVi-2'">
                     <v-row class="section__images d-flex">
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="galleryVideos[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/boda-banner.jpg`)" alt="">
+                            <silent-box :image="galleryVideos[0]"></silent-box>
                         </v-col>
                         <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
-                            <img :src="require(`../assets/foto-1.jpg`)" alt="">
+                            <silent-box :image="galleryVideos[0]"></silent-box>
                         </v-col>
                     </v-row>
                 </v-tab-item>
             </v-tabs-items>
+        </v-row>
+        <v-row id="section-gracias">
+            <v-col cols="12" sm="12" md="6" offset-md="3" class="d-flex justify-center align-center no-padding">
+               <div class="Home__title text-center">
+                   <div class="section__title text-center">Gracias</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque similique fugiat voluptatibus deleniti tenetur voluptate, pariatur soluta, voluptatem vero ad esse quae, autem itaque natus molestias tempora accusantium cumque harum!</p>
+               </div>
+           </v-col>
         </v-row>
         <Footer></Footer>
     </div>
@@ -220,7 +192,29 @@ export default {
     data () {
         return {
             tabActivePhotos: 'tab-1',
-            tabActiveVideos: 'tabVi-1'
+            tabActiveVideos: 'tabVi-1',
+            gallery: [
+                {
+                    src: 'https://images.unsplash.com/photo-1605563432942-0f863d9df42e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+                    description: 'Fotografia tomada de prueba',
+                    alt: 'Foto Boda 1',
+                    thumbnailWidth: '100%'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1621708596322-bfe4bcbd7b83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80',
+                    description: 'Fotografia tomada de prueba',
+                    alt: 'Foto Boda 2',
+                    thumbnailWidth: '100%'
+                }
+            ],
+            galleryVideos: [
+                {
+                    src: 'https://www.youtube.com/watch?v=fBmiHW_igqc',
+                    description: 'Video tomado de prueba',
+                    alt: 'Video Boda 1',
+                    thumbnailWidth: '100%'
+                }
+            ]
         }
     },
     components: {
