@@ -2,16 +2,42 @@
     <header class="Header">
         <v-row>
             <v-col sm="2" md="4" class="d-flex align-center">
-                <router-link class="Header__title" to="/home">A&A</router-link>
+                <a class="Header__title" @click="$vuetify.goTo('#section-home', options)">
+                    <img src="../assets/logo.jpg" alt="">
+                </a>
             </v-col>
             <v-col sm="10" md="8" class="d-flex align-center justify-end">
                 <nav class="Header__nav d-flex align-center">
-                    <a @click="$vuetify.goTo('#section-home', options)">Home</a>
                     <a @click="$vuetify.goTo('#section-about', options)">Historia</a>
                     <a @click="$vuetify.goTo('#section-photos', options)">Fotos</a>
                     <a @click="$vuetify.goTo('#section-videos', options)">Videos</a>
                     <a @click="$vuetify.goTo('#section-gracias', options)">Gracias</a>
+                    <a href="https://drive.google.com/" target="blank">Drive</a>
                     <v-btn class="btn-exit" v-if="tokenUser" depressed @click="expireSesion">Salir</v-btn>
+                    <v-menu offset-y>
+                        <template v-slot:activator="{ on, attrs }">
+                            <v-app-bar-nav-icon v-bind="attrs" v-on="on" class="menu-icon"></v-app-bar-nav-icon>
+                        </template>
+                        <v-list>
+                            <v-list-item @click="$vuetify.goTo('#section-about', options)">
+                                <v-list-item-title>Historia</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item @click="$vuetify.goTo('#section-photos', options)">
+                                <v-list-item-title>Fotos</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item @click="$vuetify.goTo('#section-videos', options)">
+                                <v-list-item-title>Videos</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item @click="$vuetify.goTo('#section-gracias', options)">
+                                <v-list-item-title>Gracias</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item>
+                                <v-list-item-title>
+                                    <v-btn v-if="tokenUser" depressed @click="expireSesion">Salir</v-btn>
+                                </v-list-item-title>
+                            </v-list-item>
+                        </v-list>
+                    </v-menu>
                 </nav>
             </v-col>
         </v-row>
@@ -63,30 +89,50 @@ export default {
     text-decoration: none;
     color: black !important;
 }
-.Header__title{
-    font-size: 2.4rem;
-    font-weight: 700;
+.Header__title img{
+    height: 50px;
+    padding-top: 10px;
 }
 .Header__nav a{
     font-size: 1rem;
     margin-right: 20px;
     font-weight: 300;
+    padding-top: 4px;
+    position: relative;
+}
+.Header__nav a::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    opacity: 0;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background-color: #FEDDBE;
+    transition: all .2s linear;
+}
+.Header__nav a:hover::before{
+    opacity: 1;
 }
 .btn-exit{
     background-color: #000957 !important;
-    color: white !important;
+    color: #FEDDBE !important;
+    margin-top: 4px;
 }
-@media(max-width: 600px){
-    .Header{
-        height: 50px;
-        padding: 0 10px;
+.btn-exit:hover{
+    background-color: #FEDDBE !important;
+    color: #000957 !important;
+}
+.menu-icon{
+    display: none;
+    margin-top: 6px;
+}
+@media(max-width: 960px){
+    .menu-icon{
+        display: block;
     }
-    .Header__title{
-        font-size: 2rem;
-    }
-    .Header__nav a{
-        margin-right: 10px;
-        font-size: .8rem;
+    .Header__nav a, .btn-exit{
+        display: none;
     }
 }
 </style>

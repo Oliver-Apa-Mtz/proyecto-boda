@@ -30,12 +30,14 @@ export default {
 .Footer{
     width: 100vw;
     height: 80px;
-    padding: 0 20px;
 }
 .Footer .teal{
     background-color: #FEDDBE !important;
     color: black !important;
     font-weight: 300;
     font-size: 1rem;
+}
+.Footer > div{
+    width: 100%;
 }
 </style>

@@ -14,10 +14,10 @@
             </v-col> 
         </v-row>
         <v-row id="section-about">
-            <v-col cols="12" sm="12" md="6" class="no-padding">
+            <v-col cols="12" sm="12" md="6" class="no-padding ordered-2">
                <div class="Home__drink__image"></div>
             </v-col> 
-           <v-col cols="12" sm="12" md="6" class="d-flex justify-center align-center no-padding">
+           <v-col cols="12" sm="12" md="6" class="d-flex justify-center align-center no-padding ordered-1">
                <div class="Home__title">
                     <h2>Nuestra historia</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque similique fugiat voluptatibus deleniti tenetur voluptate, pariatur soluta, voluptatem vero ad esse quae, autem itaque natus molestias tempora accusantium cumque harum!</p>
@@ -41,88 +41,88 @@
             <v-tabs-items v-model="tabActivePhotos">
                 <v-tab-item :value="'tab-1'">
                     <v-row class="section__images d-flex">
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                     </v-row>
                 </v-tab-item>
                 <v-tab-item :value="'tab-2'">
                     <v-row class="section__images d-flex">
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                     </v-row>
                 </v-tab-item>
                 <v-tab-item :value="'tab-3'">
                     <v-row class="section__images d-flex">
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                     </v-row>
                 </v-tab-item>
                 <v-tab-item :value="'tab-4'">
                     <v-row class="section__images d-flex">
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="gallery[1]"></silent-box>
                         </v-col>
                     </v-row>
@@ -141,29 +141,29 @@
                    </div>
                </div>
             </v-col>
-            <v-tabs-items v-model="tabActiveVideos">
+            <v-tabs-items v-model="tabActiveVideos" style="margin: 0 auto;text-align:center;">
                 <v-tab-item :value="'tabVi-1'">
                     <v-row class="section__images d-flex">
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="galleryVideos[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="galleryVideos[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="galleryVideos[0]"></silent-box>
                         </v-col>
                     </v-row>
                 </v-tab-item>
                 <v-tab-item :value="'tabVi-2'">
                     <v-row class="section__images d-flex">
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="galleryVideos[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="galleryVideos[0]"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="4" sm="12" md="6" lg="4">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
                             <silent-box :image="galleryVideos[0]"></silent-box>
                         </v-col>
                     </v-row>
@@ -279,9 +279,6 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
 }
-.section{
-
-}
 .section__title{
     font-size: 3rem;
     font-weight: 600;
@@ -307,9 +304,32 @@ export default {
 .mt{
     margin-top: 60px;
 }
+@media(max-width: 1200px){
+    .Home__drink__image{
+        height: 500px;
+    }
+}
 @media(max-width: 960px){
     .Home__banner{
         height: 400px;
+    }
+    .Home__title{
+        text-align: center;
+    }
+    .ordered-1{
+        order: 1;
+    }
+    .ordered-2{
+        order: 2;
+    }
+}
+@media(max-width: 500px){
+    .v-tabs-slider-wrapper{
+    }
+    .v-tab{
+        min-width: 60px !important;
+        padding: 00 5px !important;
+        font-size: 12px !important;
     }
 }
 </style>
