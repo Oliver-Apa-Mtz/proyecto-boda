@@ -1,5 +1,5 @@
 <template>
-    <div class="Home">
+    <div class="Home Home--gradient">
         <v-row>
             <v-col cols="12" sm="12" md="6" lg="7">
                <div class="Home__banner"></div>
@@ -81,6 +81,9 @@ export default {
 }
 </script>
 <style>
+.Home--gradient{
+    background-image: radial-gradient(circle at 31.98% 28.52%, #fffcf9 0, #ffefed 16.67%, #fde0de 33.33%, #f2cdcd 50%, #e6babd 66.67%, #dcabb2 83.33%, #d49faa 100%);
+}
 .Home__title--custom h2{
     font-size: 2rem !important;
     font-weight: 300 !important;
@@ -88,8 +91,8 @@ export default {
     line-height: 38px;
 }
 .btn-login, .v-snack__wrapper.theme--dark{
-    color: #232323 !important;
-    background-color: #FEDDBE !important;
+    color: #FEDDBE !important;
+    background-color: #000957 !important;
     font-size: 6rem !important;
 }
 input{

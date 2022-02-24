@@ -2,7 +2,7 @@
     <v-footer dark padless class="Footer">
         <v-card class="flex" flat tile>
             <v-card-title class="teal text-center">
-                Aliquid qui atque deserunt consequuntur ad, doloribus iusto id enim eos dolorem placeat obcaecati alias quisquam, nulla rerum iste! Provident, quidem fugiat.
+                Recuerda, es importante que la clave de acceso no sea compartida para que gente maliciosa no haga mal uso de los archivos que te comparto.
             </v-card-title>
             <v-card-text class="py-2 white--text text-center">
                 {{ new Date().getFullYear() }}
@@ -16,12 +16,7 @@ export default {
     name: 'Footer',
     data () {
         return {
-            icons: [
-                'mdi-facebook',
-                'mdi-twitter',
-                'mdi-linkedin',
-                'mdi-instagram',
-            ],
+            
         }
     }
 }
@@ -36,6 +31,7 @@ export default {
     color: black !important;
     font-weight: 300;
     font-size: 1rem;
+    display: block;
 }
 .Footer > div{
     width: 100%;
