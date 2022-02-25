@@ -16,7 +16,7 @@
         </v-row>
         <v-row id="section-about">
             <v-col cols="12" sm="12" md="6" class="no-padding ordered-2">
-               <div class="Home__drink__image"></div>
+               <div class="Home__drink__image Home__drink__image--about"></div>
             </v-col> 
            <v-col cols="12" sm="12" md="6" class="d-flex justify-center align-center no-padding ordered-1">
                <div class="Home__title">
@@ -182,50 +182,50 @@
             </v-tabs-items>
         </v-row>
         <v-row id="section-gracias">
-            <v-col cols="12" sm="12" md="6" offset-md="3" class="d-flex justify-center align-center no-padding mb-8">
+            <v-col cols="12" sm="12" md="8" offset-md="2" class="d-flex justify-center align-center no-padding mb-8">
                <div class="Home__title text-center">
                    <div class="section__title text-center">Agradecimientos</div>
                     <p>Miles de gracias a los padrinos:</p>
                     <v-list-item>
                         <v-list-item-content>
-                            <v-list-item-title>De Brindis y Medioshiga</v-list-item-title>
-                            <v-list-item-subtitle>Lic. Aydee Bautista Medina / Lic. Lusio Antonio Peña Limón</v-list-item-subtitle>
+                            <v-list-item-title class="no-truncate">De Brindis y Medioshiga</v-list-item-title>
+                            <v-list-item-subtitle class="no-truncate">Lic. Aydee Bautista Medina / Lic. Lusio Antonio Peña Limón</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
                         <v-list-item-content>
-                            <v-list-item-title>Padrinos de Anillo</v-list-item-title>
-                            <v-list-item-subtitle>Lic. Virginia Arriaga Pozos / Ing. Erick Fidel Deantes Torres</v-list-item-subtitle>
+                            <v-list-item-title class="no-truncate">Padrinos de Anillo</v-list-item-title>
+                            <v-list-item-subtitle class="no-truncate">Lic. Virginia Arriaga Pozos / Ing. Erick Fidel Deantes Torres</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
                         <v-list-item-content>
-                            <v-list-item-title>Padrinos de Pastel</v-list-item-title>
-                            <v-list-item-subtitle>Ing. Joanna del Carmen Matus Castillejos / Ing. Miguel Ángel Castillejos Pineda</v-list-item-subtitle>
+                            <v-list-item-title class="no-truncate">Padrinos de Pastel</v-list-item-title>
+                            <v-list-item-subtitle class="no-truncate">Ing. Joanna del Carmen Matus Castillejos / Ing. Miguel Ángel Castillejos Pineda</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
                         <v-list-item-content>
-                            <v-list-item-title>Padrinos de Mesa de Dulces</v-list-item-title>
-                            <v-list-item-subtitle>Ing. Asunción de María Carlock Acevedo / Ing. José Luis Castillo Díaz</v-list-item-subtitle>
+                            <v-list-item-title class="no-truncate">Padrinos de Mesa de Dulces</v-list-item-title>
+                            <v-list-item-subtitle class="no-truncate">Ing. Asunción de María Carlock Acevedo / Ing. José Luis Castillo Díaz</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
                         <v-list-item-content>
-                            <v-list-item-title>Pajecitas</v-list-item-title>
-                            <v-list-item-subtitle>Niñas Tiandra y Padme Cuervo Bautista</v-list-item-subtitle>
+                            <v-list-item-title class="no-truncate">Pajecitas</v-list-item-title>
+                            <v-list-item-subtitle class="no-truncate">Niñas Tiandra y Padme Cuervo Bautista</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
                         <v-list-item-content>
-                            <v-list-item-title>Madrina de Centros de Mesa con Dulces Regionales</v-list-item-title>
-                            <v-list-item-subtitle>Mtra. Rafaela Raviela Soberanis</v-list-item-subtitle>
+                            <v-list-item-title class="no-truncate">Madrina de Centros de Mesa con Dulces Regionales</v-list-item-title>
+                            <v-list-item-subtitle class="no-truncate">Mtra. Rafaela Raviela Soberanis</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
                         <v-list-item-content>
-                            <v-list-item-title>Madrina de Botanas</v-list-item-title>
-                            <v-list-item-subtitle>Sra. Gladys Chiñas Vázquez</v-list-item-subtitle>
+                            <v-list-item-title class="no-truncate">Madrina de Botanas</v-list-item-title>
+                            <v-list-item-subtitle class="no-truncate">Sra. Gladys Chiñas Vázquez</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                </div>
@@ -331,7 +331,7 @@ export default {
 .Home__banner{
     width: 100%;
     height: 100vh;
-    background-image: url(../assets/boda-banner.jpg);
+    background-image: url(../assets/login.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -342,10 +342,14 @@ export default {
 .Home__drink__image{
     width: 100%;
     height: 650px;
-    background-image: url(../assets/person.jpg);
+    background-image: url(../assets/banner-1.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+.Home__drink__image--about{
+    background-image: url(../assets/banner-2.jpg);
+    background-position: center top;
 }
 .section__title{
     font-size: 3rem;
@@ -372,14 +376,27 @@ export default {
 .mt{
     margin-top: 60px;
 }
+.no-truncate{
+    white-space: normal !important;
+}
 @media(max-width: 1200px){
     .Home__drink__image{
-        height: 500px;
+        height: 100%;
     }
 }
 @media(max-width: 960px){
+    .Home__banner--login{
+        display: none;
+    }
+    .Home--gradient > .row{
+        height: 80%;
+    }
     .Home__banner{
         height: 400px;
+    }
+    .Home__drink__image{
+        height: 500px;
+        background-position: center 10%;
     }
     .Home__title{
         text-align: center;
@@ -396,10 +413,33 @@ export default {
     }
 }
 @media(max-width: 500px){
+    .Home__title{
+        padding: 20px;
+    }
+    .Home__title h1{
+        font-size: 3rem;
+        line-height: 55px;
+    }
+    .Home__title h2{
+        line-height: 50px;
+    }
     .v-tab{
         min-width: 60px !important;
         padding: 00 5px !important;
         font-size: 12px !important;
+    }
+    .section__title{
+        font-size: 1.8rem;
+        margin: 10px auto;
+    }
+    .Home__title--custom{
+        padding: 20px;
+    }
+    .Home__title--custom h1{
+        font-size: 2.6rem;
+    }
+    .Home__title--custom h2{
+        line-height: 35px;
     }
 }
 </style>

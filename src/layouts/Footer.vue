@@ -27,11 +27,12 @@ export default {
     height: 80px;
 }
 .Footer .teal{
-    background-color: #FEDDBE !important;
+    background-color: #EEC373 !important;
     color: black !important;
     font-weight: 300;
     font-size: 1rem;
     display: block;
+    word-break: normal;
 }
 .Footer > div{
     width: 100%;

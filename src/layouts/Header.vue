@@ -32,6 +32,11 @@
                                 <v-list-item-title>Gracias</v-list-item-title>
                             </v-list-item>
                             <v-list-item>
+                                <a href="https://drive.google.com/" target="blank">
+                                    <v-list-item-title>Drive</v-list-item-title>
+                                </a>
+                            </v-list-item>
+                            <v-list-item>
                                 <v-list-item-title>
                                     <v-btn v-if="tokenUser" depressed @click="expireSesion">Salir</v-btn>
                                 </v-list-item-title>
@@ -108,7 +113,7 @@ export default {
     height: 2px;
     left: 0;
     bottom: -2px;
-    background-color: #FEDDBE;
+    background-color: #EEC373;
     transition: all .2s linear;
 }
 .Header__nav a:hover::before{
@@ -116,11 +121,11 @@ export default {
 }
 .btn-exit{
     background-color: #000957 !important;
-    color: #FEDDBE !important;
+    color: #EEC373 !important;
     margin-top: 4px;
 }
 .btn-exit:hover{
-    background-color: #FEDDBE !important;
+    background-color: #EEC373 !important;
     color: #000957 !important;
 }
 .menu-icon{

@@ -38,6 +38,9 @@ export default {
 	box-sizing: border-box;
 	color: #0A1931;
 }
+a{
+	text-decoration: none;
+}
 .no-padding{
 	padding: 0px !important;
 }
