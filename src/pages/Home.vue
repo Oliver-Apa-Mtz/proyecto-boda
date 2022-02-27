@@ -21,7 +21,7 @@
            <v-col cols="12" sm="12" md="6" class="d-flex justify-center align-center no-padding ordered-1">
                <div class="Home__title">
                     <h2>Nuestra Historia</h2>
-                    <p>Nos conocimos hace 6 años, un 13 de septiembre de 2015 y formalizamos nuestra relación unos meses después cuando empezamos a vivir junto. Siendo bien aceptados por ustedes: familiares, vecinos y amistades.</p>
+                    <p>Nos conocimos hace 6 años, un 13 de septiembre de 2015 y formalizamos nuestra relación unos meses después cuando empezamos a vivir juntos. Siendo bien aceptados por ustedes: familiares, vecinos y amistades.</p>
                     <p>A los tres años de estar juntos nos queríamos casar, pero por no ser legal en el estado de Oaxaca, se contuvieron nuestras ganas hasta que la ley fue aprobada hasta octubre de 2019; fue cuando decidimos programar la boda para diciembre del 2020.</p>
                </div>
            </v-col>
@@ -42,9 +42,10 @@
                    <div class="section__tabs">
                        <v-tabs v-model="tabActivePhotos" center-active>
                             <v-tab href="#tab-1">Boda</v-tab>
-                            <v-tab href="#tab-2">Recalentado</v-tab>
-                            <v-tab href="#tab-3">Padrinos</v-tab>
-                            <v-tab href="#tab-4">Amigos</v-tab>
+                            <v-tab href="#tab-2">Fiesta</v-tab>
+                            <v-tab href="#tab-3">Familia</v-tab>
+                            <v-tab href="#tab-4">Mesas</v-tab>
+                            <v-tab href="#tab-5">Recalentado</v-tab>
                         </v-tabs>
                    </div>
                </div>
@@ -52,90 +53,62 @@
             <v-tabs-items v-model="tabActivePhotos">
                 <v-tab-item :value="'tab-1'">
                     <v-row class="section__images d-flex">
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[0]"></silent-box>
+                        <v-col v-for="(item, i) in itemsBoda" :key="'boda'+i" class="section__images__item child-flex" cols="6" xs="6" sm="4" md="4" lg="3" :class="{ 'd-none': item.paginate != paginateBoda, 'd-flex': item.paginate == paginateBoda }">
+                            <silent-box :image="item" v-if="item.paginate == paginateBoda"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[1]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[0]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[1]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[0]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[1]"></silent-box>
-                        </v-col>
+                    </v-row>
+                    <v-row class="d-flex justify-center" style="width: 100vw" v-if="paginateBodaItems > 1">
+                        <div class="text-center mb-4">
+                            <v-pagination v-model="paginateBoda" :length="paginateBodaItems"></v-pagination>
+                        </div>
                     </v-row>
                 </v-tab-item>
                 <v-tab-item :value="'tab-2'">
                     <v-row class="section__images d-flex">
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[0]"></silent-box>
+                        <v-col v-for="(item, i) in itemsFiesta" :key="'fiesta'+i" class="section__images__item child-flex" cols="6" xs="6" sm="4" md="4" lg="3" :class="{ 'd-none': item.paginate != paginateFiesta, 'd-flex': item.paginate == paginateFiesta}">
+                            <silent-box :image="item" v-if="item.paginate == paginateFiesta"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[1]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[0]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[1]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[0]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[1]"></silent-box>
-                        </v-col>
+                    </v-row>
+                    <v-row class="d-flex justify-center" style="width: 100vw" v-if="paginateFiestaItems > 1">
+                        <div class="text-center mb-4">
+                            <v-pagination v-model="paginateFiesta" :length="paginateFiestaItems"></v-pagination>
+                        </div>
                     </v-row>
                 </v-tab-item>
                 <v-tab-item :value="'tab-3'">
                     <v-row class="section__images d-flex">
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[0]"></silent-box>
+                        <v-col v-for="(item, i) in itemsFamily" :key="'family'+i" class="section__images__item child-flex" cols="6" xs="6" sm="4" md="4" lg="3" :class="{ 'd-none': item.paginate != paginateFamily, 'd-flex': item.paginate == paginateFamily}">
+                            <silent-box :image="item" v-if="item.paginate == paginateFamily"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[1]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[0]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[1]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[0]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[1]"></silent-box>
-                        </v-col>
+                    </v-row>
+                    <v-row class="d-flex justify-center" style="width: 100vw" v-if="paginateFamilyItems > 1">
+                        <div class="text-center mb-4">
+                            <v-pagination v-model="paginateFamily" :length="paginateFamilyItems"></v-pagination>
+                        </div>
                     </v-row>
                 </v-tab-item>
                 <v-tab-item :value="'tab-4'">
                     <v-row class="section__images d-flex">
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[0]"></silent-box>
+                        <v-col v-for="(item, i) in itemsMesa" :key="'mesa'+i" class="section__images__item child-flex" cols="6" xs="6" sm="4" md="4" lg="3" :class="{ 'd-none': item.paginate != paginateMesa, 'd-flex': item.paginate == paginateMesa}">
+                            <silent-box :image="item" v-if="item.paginate == paginateMesa"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[1]"></silent-box>
+                    </v-row>
+                    <v-row class="d-flex justify-center" style="width: 100vw" v-if="paginateMesaItems > 1">
+                        <div class="text-center mb-4">
+                            <v-pagination v-model="paginateMesa" :length="paginateMesaItems"></v-pagination>
+                        </div>
+                    </v-row>
+                </v-tab-item>
+                <v-tab-item :value="'tab-5'">
+                    <v-row class="section__images d-flex">
+                        <v-col v-for="(item, i) in itemsRecalentado" :key="'recalentado'+i" class="section__images__item child-flex" cols="6" xs="6" sm="4" md="4" lg="3" :class="{ 'd-none': item.paginate != paginateRecalentado, 'd-flex': item.paginate == paginateRecalentado}">
+                            <silent-box :image="item" v-if="item.paginate == paginateRecalentado"></silent-box>
                         </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[0]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[1]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[0]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="gallery[1]"></silent-box>
-                        </v-col>
+                    </v-row>
+                    <v-row class="d-flex justify-center" style="width: 100vw" v-if="paginateRecalentadoItems > 1">
+                        <div class="text-center mb-4">
+                            <v-pagination v-model="paginateRecalentado" :length="paginateRecalentadoItems"></v-pagination>
+                        </div>
                     </v-row>
                 </v-tab-item>
             </v-tabs-items>
@@ -146,8 +119,8 @@
                    <div class="section__title text-center">Videos</div>
                    <div class="section__tabs">
                        <v-tabs v-model="tabActiveVideos" center-active>
-                            <v-tab href="#tabVi-1">Boda</v-tab>
-                            <v-tab href="#tabVi-2">Amigos</v-tab>
+                            <v-tab href="#tabVi-1">Nuestra Historia</v-tab>
+                            <v-tab href="#tabVi-2">Nuestro Baile</v-tab>
                         </v-tabs>
                    </div>
                </div>
@@ -156,26 +129,18 @@
                 <v-tab-item :value="'tabVi-1'">
                     <v-row class="section__images d-flex">
                         <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="galleryVideos[0]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="galleryVideos[0]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="galleryVideos[0]"></silent-box>
+                            <a href="https://drive.google.com/file/d/1ZsIWJzK3kvCtpnt0MePTjPpC6LFr_yfY/view" target="_blank">
+                                <img class="section__images__item--small" src="../assets/video-1.png" alt="">
+                            </a>
                         </v-col>
                     </v-row>
                 </v-tab-item>
                 <v-tab-item :value="'tabVi-2'">
                     <v-row class="section__images d-flex">
                         <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="galleryVideos[0]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="galleryVideos[0]"></silent-box>
-                        </v-col>
-                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
-                            <silent-box :image="galleryVideos[0]"></silent-box>
+                            <a href="https://drive.google.com/file/d/1-PxeGMCrkfRmIr22I5UODWnRTsfMBDTz/view?usp=sharing" target="_blank">
+                                <img class="section__images__item--small" src="../assets/video-2.png" alt="">
+                            </a>
                         </v-col>
                     </v-row>
                 </v-tab-item>
@@ -253,6 +218,12 @@
 import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
 
+import photosBoda from "../data/photos-boda.json";
+import photosFamily from "../data/photos-family.json";
+import photosMesa from "../data/photos-mesa.json";
+import photosFiesta from "../data/photos-fiesta.json";
+import photosRecalentado from "../data/photos-recalentado.json";
+
 export default {
     name: 'Home',
     props: ['tokenUser'],
@@ -260,30 +231,55 @@ export default {
         return {
             tabActivePhotos: 'tab-1',
             tabActiveVideos: 'tabVi-1',
-            dialog: true,
-            gallery: [
-                {
-                    src: 'https://images.unsplash.com/photo-1605563432942-0f863d9df42e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-                    description: 'Fotografia tomada de prueba',
-                    alt: 'Foto Boda 1',
-                    thumbnailWidth: '100%'
-                },
-                {
-                    src: 'https://images.unsplash.com/photo-1621708596322-bfe4bcbd7b83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80',
-                    description: 'Fotografia tomada de prueba',
-                    alt: 'Foto Boda 2',
-                    thumbnailWidth: '100%'
-                }
-            ],
-            galleryVideos: [
-                {
-                    src: 'https://www.youtube.com/watch?v=fBmiHW_igqc',
-                    description: 'Video tomado de prueba',
-                    alt: 'Video Boda 1',
-                    thumbnailWidth: '100%'
-                }
-            ]
+            paginateBoda: 1,
+            paginateFiesta: 1,
+            paginateFamily: 1,
+            paginateMesa: 1,
+            paginateRecalentado: 1,
+            dialog: true
         }
+    },
+    computed: {
+        itemsBoda() {
+            return photosBoda.data.map((item) => {
+                return item;
+            })
+        },
+        paginateBodaItems(){
+            return photosBoda.totalPaginate
+        },
+        itemsFamily() {
+            return photosFamily.data.map((item) => {
+                return item;
+            })
+        },
+        paginateFamilyItems(){
+            return photosFamily.totalPaginate
+        },
+        itemsMesa() {
+            return photosMesa.data.map((item) => {
+                return item;
+            })
+        },
+        paginateMesaItems(){
+            return photosMesa.totalPaginate
+        },
+        itemsFiesta() {
+            return photosFiesta.data.map((item) => {
+                return item;
+            })
+        },
+        paginateFiestaItems(){
+            return photosFiesta.totalPaginate
+        },
+        itemsRecalentado() {
+            return photosRecalentado.data.map((item) => {
+                return item;
+            })
+        },
+        paginateRecalentadoItems(){
+            return photosRecalentado.totalPaginate
+        },
     },
     components: {
 		Header,
@@ -292,7 +288,7 @@ export default {
     methods: {
         updateToken: function(){
             this.$emit('updateToken')
-        }
+        },
     },
     mounted: async function (){
         if(localStorage.getItem('userHotel')){
@@ -367,6 +363,7 @@ export default {
     position: relative;
 }
 .section__images__item img{
+    position: relative;
     cursor: pointer;
     transition: all .2s linear;
 }
@@ -378,6 +375,12 @@ export default {
 }
 .no-truncate{
     white-space: normal !important;
+}
+.d-none{
+    display: none !important
+}
+.section__images__item--small{
+    height: 400px;
 }
 @media(max-width: 1200px){
     .Home__drink__image{
@@ -440,6 +443,9 @@ export default {
     }
     .Home__title--custom h2{
         line-height: 35px;
+    }
+    .section__images__item--small{
+        height: 200px;
     }
 }
 </style>

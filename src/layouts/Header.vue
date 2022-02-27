@@ -12,7 +12,28 @@
                     <a @click="$vuetify.goTo('#section-photos', options)">Fotos</a>
                     <a @click="$vuetify.goTo('#section-videos', options)">Videos</a>
                     <a @click="$vuetify.goTo('#section-gracias', options)">Gracias</a>
-                    <a href="https://drive.google.com/" target="blank">Drive</a>
+                    <v-menu offset-y>
+                        <template v-slot:activator="{ on, attrs }">
+                            <a v-bind="attrs" v-on="on">Fotos Compartidas</a>
+                        </template>
+                        <v-list>
+                            <v-list-item>
+                                <a href="https://drive.google.com/drive/folders/1VB6XjUm8LsIXf698Mc1ld_aHF1OU58Ca?usp=sharing" target="blank"><v-list-item-title>Boda</v-list-item-title></a>
+                            </v-list-item>
+                            <v-list-item>
+                                <a href="https://drive.google.com/drive/folders/1wjt_bJ45fjkKCyZInv54m2idiRbQUW01?usp=sharing" target="blank"><v-list-item-title>Familia</v-list-item-title></a>
+                            </v-list-item>
+                            <v-list-item>
+                                <a href="https://drive.google.com/drive/folders/1qfDOhDhFqkK9vQr0GvjewAqvz1K2wmuG?usp=sharing" target="blank"><v-list-item-title>Fiesta</v-list-item-title></a>
+                            </v-list-item>
+                            <v-list-item>
+                                <a href="https://drive.google.com/drive/folders/1sBcapqo-4e5HpYOgkHlD1pmZamQ2Jwuk?usp=sharing" target="blank"><v-list-item-title>Mesas</v-list-item-title></a>
+                            </v-list-item>
+                            <v-list-item>
+                                <a href="https://drive.google.com/drive/folders/1wp5tQ24b1gb3Hus-HpnAGDEof154q0g7?usp=sharing" target="blank"><v-list-item-title>Recalentado</v-list-item-title></a>
+                            </v-list-item>
+                        </v-list>
+                    </v-menu>
                     <v-btn class="btn-exit" v-if="tokenUser" depressed @click="expireSesion">Salir</v-btn>
                     <v-menu offset-y>
                         <template v-slot:activator="{ on, attrs }">
@@ -32,8 +53,28 @@
                                 <v-list-item-title>Gracias</v-list-item-title>
                             </v-list-item>
                             <v-list-item>
-                                <a href="https://drive.google.com/" target="blank">
-                                    <v-list-item-title>Drive</v-list-item-title>
+                                <a href="https://drive.google.com/drive/folders/1VB6XjUm8LsIXf698Mc1ld_aHF1OU58Ca?usp=sharing" target="blank">
+                                    <v-list-item-title>Fotos Boda</v-list-item-title>
+                                </a>
+                            </v-list-item>
+                            <v-list-item>
+                                <a href="https://drive.google.com/drive/folders/1wjt_bJ45fjkKCyZInv54m2idiRbQUW01?usp=sharing" target="blank">
+                                    <v-list-item-title>Fotos Familia</v-list-item-title>
+                                </a>
+                            </v-list-item>
+                            <v-list-item>
+                                <a href="https://drive.google.com/drive/folders/1qfDOhDhFqkK9vQr0GvjewAqvz1K2wmuG?usp=sharing" target="blank">
+                                    <v-list-item-title>Fotos Fiesta</v-list-item-title>
+                                </a>
+                            </v-list-item>
+                            <v-list-item>
+                                <a href="https://drive.google.com/drive/folders/1sBcapqo-4e5HpYOgkHlD1pmZamQ2Jwuk?usp=sharing" target="blank">
+                                    <v-list-item-title>Fotos Mesas</v-list-item-title>
+                                </a>
+                            </v-list-item>
+                            <v-list-item>
+                                <a href="https://drive.google.com/drive/folders/1wp5tQ24b1gb3Hus-HpnAGDEof154q0g7?usp=sharing" target="blank">
+                                    <v-list-item-title>Fotos Recalentado</v-list-item-title>
                                 </a>
                             </v-list-item>
                             <v-list-item>

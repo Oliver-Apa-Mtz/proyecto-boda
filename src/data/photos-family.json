@@ -1,0 +1,37 @@
+{
+    "totalPaginate": 1,
+    "data": [
+        {
+            "id": "1",
+            "src":"https://drive.google.com/uc?export=view&id=1asW9LvYm6Y4Gmv7nJGiTtz0nbc7sl82V",
+            "description": "Familia 1",
+            "alt": "Familia 1",
+            "thumbnailWidth": "100%",
+            "paginate": 1
+        },
+        {
+            "id": "2",
+            "src":"https://drive.google.com/uc?export=view&id=1EPRvm-iVbyiKPuo6IzhhJzC5X6T_x6T1",
+            "description": "Familia 2",
+            "alt": "Familia 2",
+            "thumbnailWidth": "100%",
+            "paginate": 1
+        },
+        {
+            "id": "3",
+            "src":"https://drive.google.com/uc?export=view&id=1knoU7Pvij5ZAaOtjgTd6LeRebp_Svxdx",
+            "description": "Familia 3",
+            "alt": "Familia 3",
+            "thumbnailWidth": "100%",
+            "paginate": 1
+        },
+        {
+            "id": "4",
+            "src":"https://drive.google.com/uc?export=view&id=1kr6prbGwJiqJgQ29xqSUM9tE5HhIH-bj",
+            "description": "Familia 4",
+            "alt": "Familia 4",
+            "thumbnailWidth": "100%",
+            "paginate": 1
+        }
+    ]
+}
