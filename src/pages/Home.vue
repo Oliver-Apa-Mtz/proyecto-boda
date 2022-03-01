@@ -26,14 +26,17 @@
                </div>
            </v-col>
         </v-row>
-        <v-row>
-           <v-col cols="12" sm="12" md="6" class="d-flex justify-center align-center no-padding offset-md-3 ">
+        <v-row >
+           <v-col cols="12" sm="12" md="6" class="d-flex justify-center align-center no-padding">
                <div class="Home__title text-center">
                     <h2>Nuestra Boda</h2>
                     <p>Debido a la pandemia y a las diversas olas que afectaron al país, se pospuso la boda para el 29 de diciembre de 2021, gracias a que la arrendadora, los grupos musicales y el salón aceptaron el cambio de fecha y respetaron el anticipo dado.</p>
                     <p>Y llegó el gran día, la ceremonia y festejo se realizó en el Gran Hotel Don Nacho, en Salina Cruz, Oaxaca. Coordinó y arregló hermosamente el evento la Mtra. Ingrid Leyva Villalobos. Tocó la Orquesta Limón y Sal de Coatzacoalcos, Veracruz. El delicioso banquete y elegante mobiliario fue a cargo de Enriqueta Eventos y tanto el video como fotografías a cargo de FotoClub Salina Cruz.</p>
                </div>
            </v-col>
+           <v-col cols="12" sm="12" md="6" class="no-padding">
+               <div class="Home__drink__image Home__drink__image--boda"></div>
+            </v-col> 
         </v-row>
         <v-row id="section-photos">
             <v-col cols="12">
@@ -59,7 +62,7 @@
                     </v-row>
                     <v-row class="d-flex justify-center" style="width: 100vw" v-if="paginateBodaItems > 1">
                         <div class="text-center mb-4">
-                            <v-pagination v-model="paginateBoda" :length="paginateBodaItems"></v-pagination>
+                            <v-pagination v-model="paginateBoda" :length="paginateBodaItems" @input="$vuetify.goTo('#section-photos', options)"></v-pagination>
                         </div>
                     </v-row>
                 </v-tab-item>
@@ -71,7 +74,7 @@
                     </v-row>
                     <v-row class="d-flex justify-center" style="width: 100vw" v-if="paginateFiestaItems > 1">
                         <div class="text-center mb-4">
-                            <v-pagination v-model="paginateFiesta" :length="paginateFiestaItems"></v-pagination>
+                            <v-pagination v-model="paginateFiesta" :length="paginateFiestaItems" @input="$vuetify.goTo('#section-photos', options)"></v-pagination>
                         </div>
                     </v-row>
                 </v-tab-item>
@@ -83,7 +86,7 @@
                     </v-row>
                     <v-row class="d-flex justify-center" style="width: 100vw" v-if="paginateFamilyItems > 1">
                         <div class="text-center mb-4">
-                            <v-pagination v-model="paginateFamily" :length="paginateFamilyItems"></v-pagination>
+                            <v-pagination v-model="paginateFamily" :length="paginateFamilyItems" @input="$vuetify.goTo('#section-photos', options)"></v-pagination>
                         </div>
                     </v-row>
                 </v-tab-item>
@@ -95,7 +98,7 @@
                     </v-row>
                     <v-row class="d-flex justify-center" style="width: 100vw" v-if="paginateMesaItems > 1">
                         <div class="text-center mb-4">
-                            <v-pagination v-model="paginateMesa" :length="paginateMesaItems"></v-pagination>
+                            <v-pagination v-model="paginateMesa" :length="paginateMesaItems" @input="$vuetify.goTo('#section-photos', options)"></v-pagination>
                         </div>
                     </v-row>
                 </v-tab-item>
@@ -107,7 +110,7 @@
                     </v-row>
                     <v-row class="d-flex justify-center" style="width: 100vw" v-if="paginateRecalentadoItems > 1">
                         <div class="text-center mb-4">
-                            <v-pagination v-model="paginateRecalentado" :length="paginateRecalentadoItems"></v-pagination>
+                            <v-pagination v-model="paginateRecalentado" :length="paginateRecalentadoItems" @input="$vuetify.goTo('#section-photos', options)"></v-pagination>
                         </div>
                     </v-row>
                 </v-tab-item>
@@ -280,6 +283,13 @@ export default {
         paginateRecalentadoItems(){
             return photosRecalentado.totalPaginate
         },
+        options () {
+            return {
+                duration: 300,
+                offset: 0,
+                easing: 'easeInOutCubic',
+            }
+        }
     },
     components: {
 		Header,
@@ -288,7 +298,7 @@ export default {
     methods: {
         updateToken: function(){
             this.$emit('updateToken')
-        },
+        }
     },
     mounted: async function (){
         if(localStorage.getItem('userHotel')){
@@ -345,6 +355,10 @@ export default {
 }
 .Home__drink__image--about{
     background-image: url(../assets/banner-2.jpg);
+    background-position: center top;
+}
+.Home__drink__image--boda{
+    background-image: url(../assets/banner-3.jpg);
     background-position: center top;
 }
 .section__title{
