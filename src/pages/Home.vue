@@ -199,6 +199,43 @@
                </div>
            </v-col>
         </v-row>
+        <v-row class="comments__container mb-10">
+            <v-col cols="12" sm="12">
+               <div class="Home__title Home__title--no-pad text-center">
+                   <div class="section__title text-center">Comentarios</div>
+                    <p>Si gustas agrega un comentario 😀</p>
+               </div>
+            </v-col>
+            <v-col cols="12" sm="12" md="7" class="comments__table">
+                <v-list three-line v-if="comments.length > 0">
+                    <template v-for="(item, key) in comments">
+                        <v-list-item :key="item.name" class="mb-2">
+                            <v-list-item-avatar>
+                                <v-img v-if="key % 2 == 0" src="../assets/user-1.png"></v-img>
+                                <v-img v-else src="../assets/user-2.png"></v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>{{item.name ? item.name : 'Usuario anonimo'}}</v-list-item-title>
+                                <v-list-item-subtitle class="no-truncate">{{item.message}}</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </template>
+                </v-list>
+                <div v-else class="d-flex align-center justify-center" style="height:50%; width:100%">
+                    <h4 class="alert-comments">Aun no hay comentarios, se el primero en comentar!!!</h4>
+                </div>
+            </v-col>
+            <v-col cols="12" sm="12" md="5" class="comments__form">
+                <v-text-field v-model="name" label="Nombre (opcional)" outlined clearable class="input-clear"></v-text-field>
+                <v-text-field v-model="message" outlined clearable label="Comentario" type="text"></v-text-field>
+                <v-row>
+                    <v-col cols="12" class="d-flex justify-center align-center">
+                        <v-progress-circular v-if="loading" size="24" color="info" indeterminate></v-progress-circular>
+                        <v-btn v-else class="btn-login" @click="agregarDato()" rounded x-large :disabled="message.length == 0">Comentar</v-btn>
+                    </v-col>
+                </v-row>
+            </v-col>
+        </v-row>
         <v-dialog v-model="dialog" max-width="400">
             <v-card>
                 <v-card-title class="text-h5">
@@ -213,11 +250,20 @@
                 </v-card-actions>
             </v-card>
         </v-dialog>
+        <v-snackbar v-model="snackbar">
+            {{responseMessages}}
+            <template v-slot:action="{ attrs }">
+                <v-btn color="pink" text v-bind="attrs" @click="snackbar = false">Cerrar</v-btn>
+            </template>
+        </v-snackbar>
         <Footer></Footer>
     </div>
 </template>
 
 <script>
+import { collection, getDocs, addDoc } from 'firebase/firestore/lite';
+import { db } from "../firebase";
+
 import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
 
@@ -239,7 +285,13 @@ export default {
             paginateFamily: 1,
             paginateMesa: 1,
             paginateRecalentado: 1,
-            dialog: true
+            dialog: true,
+            name: '',
+            message: '',
+            loading: false,
+            comments: [],
+            responseMessages: '',
+            snackbar: false
         }
     },
     computed: {
@@ -289,7 +341,7 @@ export default {
                 offset: 0,
                 easing: 'easeInOutCubic',
             }
-        }
+        },
     },
     components: {
 		Header,
@@ -298,14 +350,45 @@ export default {
     methods: {
         updateToken: function(){
             this.$emit('updateToken')
+        },
+        async getComments () {
+            this.comments = []
+            const querySnapshot = await getDocs(collection(db, "comments"));
+            querySnapshot.forEach((doc) => {
+                let data = doc.data()
+                data.id = doc.id
+                this.comments.push(data)
+            });
+        },
+        async agregarDato(){
+            this.loading = true
+            await addDoc(collection(db, "comments"), {
+                name: this.name,
+                message: this.message
+            })
+            .then(async() => {
+                await this.getComments()
+            })
+            .catch(function(error) {
+                console.error(error);
+                this.responseMessages = 'Error al añadir el comentario, intente mas tarde'
+                this.snackbar = true
+            });
+            this.resetData()
+            this.loading = false
+        },
+        resetData: function() {
+            this.name = ''
+            this.message = ''
         }
     },
     mounted: async function (){
         if(localStorage.getItem('userHotel')){
-            console.log('entro')
+            //console.log('entro')
         }else{
             this.$router.push({name: 'Admin'})
         }
+        this.getComments();
     }
 }
 </script>
@@ -333,6 +416,9 @@ export default {
     margin-bottom: 20px;
     letter-spacing: .8px;
     line-height: 26px;
+}
+.Home__title--no-pad{
+    padding-bottom: 0px;
 }
 .Home__banner{
     width: 100%;
@@ -389,12 +475,40 @@ export default {
 }
 .no-truncate{
     white-space: normal !important;
+    display: block !important;
+    overflow: visible !important;
 }
 .d-none{
     display: none !important
 }
 .section__images__item--small{
     height: 400px;
+}
+.comments__container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.comments__table{
+    height: 500px;
+    overflow: scroll !important;
+}
+.comments__form{
+    padding-top: 80px;
+}
+.btn-send{
+    cursor: pointer;
+}
+.input-clear .v-input__slot::before{
+    display: none;
+}
+.comments__container .v-list-item__content{
+    padding: 10px 0px !important;
+}
+.alert-comments{
+    font-size: 1.6rem;
+    text-align: center;
 }
 @media(max-width: 1200px){
     .Home__drink__image{

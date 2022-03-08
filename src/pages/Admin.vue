@@ -104,4 +104,7 @@ input{
     font-size: .8rem;
     margin-bottom: 10px;
 }
+.v-snack__content{
+    color: white !important;
+}
 </style>
