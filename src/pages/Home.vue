@@ -124,6 +124,8 @@
                        <v-tabs v-model="tabActiveVideos" center-active>
                             <v-tab href="#tabVi-1">Nuestra Historia</v-tab>
                             <v-tab href="#tabVi-2">Nuestro Baile</v-tab>
+                            <v-tab href="#tabVi-3">Evento Boda</v-tab>
+                            <v-tab href="#tabVi-4">Recalentado</v-tab>
                         </v-tabs>
                    </div>
                </div>
@@ -147,7 +149,62 @@
                         </v-col>
                     </v-row>
                 </v-tab-item>
+                <v-tab-item :value="'tabVi-3'">
+                    <v-row class="section__images d-flex">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
+                            <a href="https://drive.google.com/file/d/1Oas05fj4nu3xytlv5TOgRaxagZXvW0Qu/view?usp=sharing" target="_blank">
+                                <img class="section__images__item--small" src="../assets/video3.jpg" alt="">
+                            </a>
+                        </v-col>
+                    </v-row>
+                </v-tab-item>
+                <v-tab-item :value="'tabVi-4'">
+                    <v-row class="section__images d-flex">
+                        <v-col class="section__images__item d-flex child-flex" cols="12" xs="12" sm="6" md="4" lg="3">
+                            <a href="https://drive.google.com/file/d/1ew0waGCF70yOKL64_yaPj94Uw73KIDpI/view?usp=sharing" target="_blank">
+                                <img class="section__images__item--small" src="../assets/video4.jpg" alt="">
+                            </a>
+                        </v-col>
+                    </v-row>
+                </v-tab-item>
             </v-tabs-items>
+        </v-row>
+        <v-row class="comments__container mb-10">
+            <v-col cols="12" sm="12">
+               <div class="Home__title Home__title--no-pad text-center">
+                   <div class="section__title text-center">Comentarios</div>
+                    <p>Si gustas agrega un comentario 😀</p>
+               </div>
+            </v-col>
+            <v-col cols="12" sm="12" md="7" class="comments__table">
+                <v-list three-line v-if="comments.length > 0">
+                    <template v-for="(item, key) in comments">
+                        <v-list-item :key="item.name" class="mb-2">
+                            <v-list-item-avatar>
+                                <v-img v-if="key % 2 == 0" src="../assets/user-1.png"></v-img>
+                                <v-img v-else src="../assets/user-2.png"></v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>{{item.name ? item.name : 'Usuario anonimo'}}</v-list-item-title>
+                                <v-list-item-subtitle class="no-truncate">{{item.message}}</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </template>
+                </v-list>
+                <div v-else class="d-flex align-center justify-center" style="height:50%; width:100%">
+                    <h4 class="alert-comments">Aun no hay comentarios, se el primero en comentar!!!</h4>
+                </div>
+            </v-col>
+            <v-col cols="12" sm="12" md="5" class="comments__form">
+                <v-text-field v-model="name" label="Nombre (opcional)" outlined clearable class="input-clear"></v-text-field>
+                <v-text-field v-model="message" outlined clearable label="Comentario" type="text"></v-text-field>
+                <v-row>
+                    <v-col cols="12" class="d-flex justify-center align-center">
+                        <v-progress-circular v-if="loading" size="24" color="info" indeterminate></v-progress-circular>
+                        <v-btn v-else class="btn-login" @click="agregarDato()" rounded x-large :disabled="message.length == 0">Comentar</v-btn>
+                    </v-col>
+                </v-row>
+            </v-col>
         </v-row>
         <v-row id="section-gracias">
             <v-col cols="12" sm="12" md="8" offset-md="2" class="d-flex justify-center align-center no-padding mb-8">
@@ -198,43 +255,6 @@
                     </v-list-item>
                </div>
            </v-col>
-        </v-row>
-        <v-row class="comments__container mb-10">
-            <v-col cols="12" sm="12">
-               <div class="Home__title Home__title--no-pad text-center">
-                   <div class="section__title text-center">Comentarios</div>
-                    <p>Si gustas agrega un comentario 😀</p>
-               </div>
-            </v-col>
-            <v-col cols="12" sm="12" md="7" class="comments__table">
-                <v-list three-line v-if="comments.length > 0">
-                    <template v-for="(item, key) in comments">
-                        <v-list-item :key="item.name" class="mb-2">
-                            <v-list-item-avatar>
-                                <v-img v-if="key % 2 == 0" src="../assets/user-1.png"></v-img>
-                                <v-img v-else src="../assets/user-2.png"></v-img>
-                            </v-list-item-avatar>
-                            <v-list-item-content>
-                                <v-list-item-title>{{item.name ? item.name : 'Usuario anonimo'}}</v-list-item-title>
-                                <v-list-item-subtitle class="no-truncate">{{item.message}}</v-list-item-subtitle>
-                            </v-list-item-content>
-                        </v-list-item>
-                    </template>
-                </v-list>
-                <div v-else class="d-flex align-center justify-center" style="height:50%; width:100%">
-                    <h4 class="alert-comments">Aun no hay comentarios, se el primero en comentar!!!</h4>
-                </div>
-            </v-col>
-            <v-col cols="12" sm="12" md="5" class="comments__form">
-                <v-text-field v-model="name" label="Nombre (opcional)" outlined clearable class="input-clear"></v-text-field>
-                <v-text-field v-model="message" outlined clearable label="Comentario" type="text"></v-text-field>
-                <v-row>
-                    <v-col cols="12" class="d-flex justify-center align-center">
-                        <v-progress-circular v-if="loading" size="24" color="info" indeterminate></v-progress-circular>
-                        <v-btn v-else class="btn-login" @click="agregarDato()" rounded x-large :disabled="message.length == 0">Comentar</v-btn>
-                    </v-col>
-                </v-row>
-            </v-col>
         </v-row>
         <v-dialog v-model="dialog" max-width="400">
             <v-card>
@@ -491,7 +511,8 @@ export default {
     padding: 0 20px;
 }
 .comments__table{
-    height: 500px;
+    height: auto;
+    max-height: 500px;
     overflow: scroll !important;
 }
 .comments__form{
