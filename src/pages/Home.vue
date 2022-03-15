@@ -179,7 +179,7 @@
             <v-col cols="12" sm="12" md="7" class="comments__table">
                 <v-list three-line v-if="comments.length > 0">
                     <template v-for="(item, key) in comments">
-                        <v-list-item :key="item.name" class="mb-2">
+                        <v-list-item :key="item.name" class="mb-2" v-if="item.message">
                             <v-list-item-avatar>
                                 <v-img v-if="key % 2 == 0" src="../assets/user-1.png"></v-img>
                                 <v-img v-else src="../assets/user-2.png"></v-img>
